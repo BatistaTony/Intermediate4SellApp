@@ -11,21 +11,21 @@ it("test first redux", () => {
   expect(getUser()).toEqual({ type: "GET_USER" });
 });
 
-it("is it get the state ? ", () => {
+it("is it get an Object as a state ? ", () => {
   let state;
   state = User({}, { type: "GET_USER" });
 
   expect(state).toBeInstanceOf(Object);
 });
 
-it("render correctly and show text", () => {
-  let wrapper = mount(
+it("render correctly and show text on h1", () => {
+  let wrapper = render(
     <Provider store={store}>
       <Hero />
     </Provider>
   );
 
-  expect(wrapper.find("Button").text()).toBe(
-    "Do not seatle in, faz a tabua bigBro !"
-  );
+  console.log(wrapper.find("h1"));
+
+  expect(wrapper.find("h1")).toBe("Do not seatle in, faz a tabua bigBro !");
 });
