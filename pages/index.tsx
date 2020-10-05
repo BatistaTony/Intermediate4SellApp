@@ -2,11 +2,11 @@ import ContentPage from "../components/ContentPage/content";
 import Hero from "../components/hero/hero";
 import Layout from "../components/layout/layout";
 
-export default function INdex() {
+export default function Index() {
   return (
     <Layout>
       <Hero />
-      <ContentPage />
+      <ContentPage posts={[]} />
     </Layout>
   );
 }

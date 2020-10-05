@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import App from "next/app";
 import { Fragment } from "react";
+import { Provider } from "react-redux";
+import store from "./../store/index";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -17,10 +19,10 @@ class MyApp extends App {
     const { Component, ...pageProps } = this.props;
 
     return (
-      <Fragment>
+      <Provider store={store}>
         <GlobalStyle />
         <Component {...pageProps} />
-      </Fragment>
+      </Provider>
     );
   }
 }

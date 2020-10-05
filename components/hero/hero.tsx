@@ -7,7 +7,12 @@ import {
   BtnContainer,
 } from "./heroStyle";
 
+import { useDispatch } from "react-redux";
+import { getUser } from "./../../store/actions/user";
+
 export default function Hero() {
+  const dispatch = useDispatch();
+
   return (
     <HeroStyle>
       <ApresentationContainer>
@@ -20,7 +25,7 @@ export default function Hero() {
         </Text>
 
         <BtnContainer>
-          <Button>Fazer a tabua</Button>
+          <Button onClick={() => dispatch(getUser())}>Fazer a tabua</Button>
           <Button>Quero Algo</Button>
         </BtnContainer>
       </ApresentationContainer>
